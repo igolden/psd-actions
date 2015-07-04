@@ -8,7 +8,7 @@ function main(){
   var LB = activeDocument.activeLayer.bounds;  
   var Width= LB[2].value - LB[0].value;  
   var onePix = 100/Width;  
-  var newHeight = onePix * 100;
+  var newHeight = onePix * 200;
   var currentWidth = doc.activeLayer.width;  
   doc.activeLayer.resize( currentWidth , newHeight, AnchorPosition.MIDDLECENTER);   
   app.preferences.rulerUnits = startRulerUnits;  

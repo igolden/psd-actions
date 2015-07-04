@@ -6,11 +6,16 @@ function main(){
   var doc = activeDocument;  
   var res= doc.resolution;  
   var LB = activeDocument.activeLayer.bounds;  
+
   var Width= LB[2].value - LB[0].value;  
-  var onePix = 100/Width;  
-  var newHeight = onePix * 100;
+  var widthPix = 100/Width;  
+
+  var newWidth = widthPix * 70;  
+  
+  var Height= LB[3].value - LB[1].value;  
+  var heightPix = 100/Height;  
   var currentHeight = doc.activeLayer.height;  
-  var newWidth = onePix * 670;  
+
   doc.activeLayer.resize( newWidth , currentHeight, AnchorPosition.MIDDLECENTER);   
   app.preferences.rulerUnits = startRulerUnits;  
 }  

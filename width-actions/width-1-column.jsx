@@ -8,10 +8,8 @@ function main(){
   var LB = activeDocument.activeLayer.bounds;  
   var Width= LB[2].value - LB[0].value;  
   var onePix = 100/Width;  
-  var newHeight = onePix * 100;
-  var currentHeight = doc.activeLayer.height;  
-  var newWidth = onePix * 970;  
-  doc.activeLayer.resize( newWidth , currentHeight, AnchorPosition.MIDDLECENTER);   
+  var newSize = onePix * 70;  
+  doc.activeLayer.resize( newSize , newSize, AnchorPosition.MIDDLECENTER);   
   app.preferences.rulerUnits = startRulerUnits;  
 }  
 main(); 
