@@ -7,9 +7,11 @@ function main(){
   var res= doc.resolution;  
   var LB = activeDocument.activeLayer.bounds;  
   var Width= LB[2].value - LB[0].value;  
-  var onePix = 100/Width;  
-  var newSize = onePix * 70;  
-  doc.activeLayer.resize( newSize , newSize, AnchorPosition.MIDDLECENTER);   
+  var widthPix = 100/Width;  
+  var currentHeight = activeDocument.activeLayer.height;
+
+  var newWidth = widthPix * 70;  
+  doc.activeLayer.resize( newWidth , currentHeight, AnchorPosition.MIDDLECENTER);   
   app.preferences.rulerUnits = startRulerUnits;  
 }  
 main(); 
